@@ -2,7 +2,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/JustGithubYeah/Afk/ma
 local Player = game:GetService("Players")
 local Specs = Player.LocalPlayer.PlayerValues.Specialization
 local Spec = {Tables = {Specialization = {"Sasuke's Rinnegan v1","Indra's Mangekyo Sharingan v2","Busoshoku Haki Internal Destruction"}}}
-local S_time = 0.5
+local S_time = 0.25
 _G.SSpin = true
 
 spawn(function()
