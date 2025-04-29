@@ -1,0 +1,20 @@
+local Hit = "Hit's Race"
+local Top = "Toppo's Race"
+local Cat = "Beerus' Race"
+
+local Race = Hit
+local R_time = .5
+_G.RSpin = true
+
+spawn(function()
+while _G.RSpin == true do
+  if 
+    Races.value == Race
+  then
+    return
+  end
+  local args = {1}
+game:GetService("ReplicatedStorage").RemoteEvents.RaceSpinRemote:FireServer(unpack(args))
+wait(R_time)
+end
+end)
