@@ -1,0 +1,25 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JustGithubYeah/Afk/main/Anti%20Afk.lua"))()
+local Player = game:GetService("Players")
+local Specs = Player.LocalPlayer.PlayerValues.Specialization
+local Spec = {Tables = {Specialization = {"Sasuke's Rinnegan v1","Indra's Mangekyo Sharingan v2","Busoshoku Haki Internal Destruction"}}}
+local S_time = 0.5
+_G.SSpin = true
+
+spawn(function()
+    while _G.SSpin do
+        local foundSpec = false
+        for _, specValue in ipairs(Spec.Tables.Specialization) do
+            if Specs.value == specValue then
+                foundSpec = true
+                break
+            end
+        end
+
+        if foundSpec then
+            return
+        end
+
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("SpinRemote"):FireServer(1)
+        wait(S_time)
+    end
+end)
