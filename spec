@@ -1,0 +1,44 @@
+local Flash = "Flashstep"
+local Son = "Sonido"
+local Buso = "Bushoshoku Haki"
+local Ken = "Kenbunshoku Haki"
+local Hao = "Haoshoku Haki"
+local Rai = "Rai's Mangekyo Sharingan v1"
+local Naori = "Naori's Mangekyo Sharingan v1"
+local Izuna = "Izuna's Mangekyo Sharingan v1"
+local Naka = "Naka's Mangekyo Sharingan v1"
+local Itachi1 = "Itachi's Mangekyo Sharingan v1"
+local Itachi2 = "Itachi's Mangekyo Sharingan v2"
+local Itachi3 = "Itachi's Mangekyo Sharingan v3"
+local Itachi4 = "Itachi's Mangekyo Sharingan v4"
+local Itachi5 = "Itachi's Mangekyo Sharingan v5"
+local Indra1 = "Indra's Mangekyo Sharingan v1"
+local Indra2 = "Indra's Mangekyo Sharingan v2"
+local Rin1 = "Rinnegan v1"
+local Rin2 = "Rinnegan v2"
+local Rin3 = "Rinnegan v3"
+local Rin4 = "Rinnegan v4"
+local SR = "Sasuke's Rinnegan v1"
+local MMS = "Madara's Mangekyo Sharingan v1"
+local SMS = "Sasuke's Mangekyo Sharingan v1"
+
+local Player = game:GetService("Players")
+local Specs = Player.LocalPlayer.PlayerValues.Specialization
+local Races = Player.LocalPlayer.PlayerValues.Race
+
+local Spec = SR
+local S_time = .5
+_G.SSpin = true
+
+spawn(function()
+while _G.SSpin == true do
+  if 
+    Specs.value == Spec
+  then 
+    return
+  end
+  local args = {1}
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("SpinRemote"):FireServer(unpack(args))
+wait(S_time)
+end
+end)
